@@ -44,6 +44,79 @@
     .order-bar{background:#fff8e2;border-block:1px solid #f0e7d1}.order-bar .container{padding-top:34px;padding-bottom:34px}.order-bar h2{font-size:clamp(1.5rem,2.35vw,2rem);margin:7px 0 20px}.order-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.order-step{display:flex;gap:13px;align-items:start}.order-step .order-number{display:grid;place-items:center;border-radius:9px;background:#171717;color:#ffc20c;flex:0 0 37px;width:37px;height:37px;font-weight:950}.order-step strong{display:block;font-weight:900;font-size:.93rem}.order-step p{margin:3px 0 0;color:#525252;font-size:.83rem;line-height:1.5}
     @media(max-width:740px){.order-steps{grid-template-columns:1fr;gap:19px}.order-bar .container{padding-top:31px;padding-bottom:31px}}
   </style>
+
+  <!-- VERTEXFIL RESPONSIVE IMAGE / HERO FIX • 2026-10-11 -->
+  <style id="vertexfil-layout-fix">
+    /* Never crop complete product-poster artwork. The original 1:1 poster must
+       remain fully visible rather than stretching into a portrait viewport. */
+    .hero-grid{
+      grid-template-columns:minmax(0,.96fr) minmax(0,1.04fr);
+      min-height:0;
+      align-items:center;
+      gap:clamp(30px,4.6vw,70px);
+      padding-top:clamp(50px,5vw,76px);
+      padding-bottom:clamp(60px,6vw,86px);
+    }
+    .hero-grid > *{min-width:0}
+    .hero h1{font-size:clamp(3rem,4.65vw,5.25rem);max-width:none;line-height:1.08;letter-spacing:-.048em}
+    .hero h1 em{white-space:normal}
+    .hero p{max-width:520px;font-size:clamp(.98rem,1.25vw,1.09rem)}
+    .hero-signoff{margin-top:34px}
+    .hero-visual{min-width:0;width:100%;max-width:660px;margin-inline:auto;display:flex;flex-direction:column;align-items:stretch}
+    .hero-visual img{
+      display:block;
+      width:100%;
+      height:auto !important;
+      max-height:none !important;
+      aspect-ratio:auto !important;
+      object-fit:contain !important;
+      object-position:center center;
+      border-radius:10px;
+      box-shadow:13px 13px 0 var(--gold);
+      background:#fff;
+    }
+    /* The illustration note is a caption BELOW the picture—not overlaid on it. */
+    .hero-visual .image-tag{
+      position:static;
+      display:block;
+      margin-top:25px;
+      padding:0;
+      background:none;
+      color:#bdbdbd;
+      font-size:.68rem;
+      font-weight:750;
+      letter-spacing:.09em;
+      line-height:1.4;
+      text-align:right;
+    }
+    /* Product images include wording and labels; preserve their entire area. */
+    .series-visual{display:grid;place-items:center;background:#f7f7f4}
+    .series-visual img{width:100%;height:100%;object-fit:contain;object-position:center}
+    .banner-img{height:auto;aspect-ratio:1;display:grid;place-items:center;background:#fff}
+    .banner-img img{display:block;width:100%;height:auto;max-height:none;object-fit:contain}
+    .colors-grid img{display:block;width:100%;height:auto;object-fit:contain}
+    @media(max-width:1040px){
+      .hero-grid{grid-template-columns:1fr;gap:34px;padding-top:60px}
+      .hero-grid > div:first-child{max-width:740px}
+      .hero h1{max-width:740px;font-size:clamp(3.5rem,7vw,5.4rem)}
+      .hero-visual{width:min(100% - 14px,660px);max-width:660px;justify-self:center}
+    }
+    @media(max-width:740px){
+      .hero-grid{gap:28px;padding-top:45px;padding-bottom:50px}
+      .hero h1{font-size:clamp(2.55rem,10.4vw,4.1rem);line-height:1.1}
+      .hero-visual{width:calc(100% - 13px);max-width:550px;margin:0}
+      .hero-visual img{box-shadow:10px 10px 0 var(--gold)}
+      .hero-visual .image-tag{margin-top:20px;font-size:.58rem;text-align:left}
+      .banner-img{aspect-ratio:auto}
+      .selector-frame{grid-template-columns:minmax(0,1fr)}
+      .selector-frame > div{min-width:0}
+    }
+    @media(max-width:380px){
+      .hero h1{font-size:clamp(2.28rem,10.1vw,2.65rem)}
+      .hero-visual{width:calc(100% - 10px)}
+      .picker-actions .btn{width:100%;max-width:100%;white-space:normal;text-align:center}
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
